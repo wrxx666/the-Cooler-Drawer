@@ -1,5 +1,8 @@
 package com.example.drawer.forms;
 
+/**
+ * Клетка, только для конкретных объектов
+ */
 public class ObjCell extends Cell{
 
     HallObject owner;

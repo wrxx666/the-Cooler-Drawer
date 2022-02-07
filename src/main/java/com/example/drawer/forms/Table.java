@@ -2,6 +2,9 @@ package com.example.drawer.forms;
 
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Описывает некий стол
+ */
 public class Table extends HallObject{
 
     private static int count;

@@ -1,5 +1,8 @@
 package com.example.drawer.forms;
 
+/**
+ * Описание абстрактного объекта в зале
+ */
 public abstract class HallObject {
     double x;
     double y;

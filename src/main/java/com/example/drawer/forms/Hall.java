@@ -4,15 +4,16 @@ package com.example.drawer.forms;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * Описывает зал, реализует в себе список столов и задейстоваванных на поле клеток
+ */
 public class Hall {
     private final Color color;
     private final double width;
     private final double height;
-    private static HashSet<HallCell> hallCellSet;
 
     public static List<Table> tableList = new ArrayList<>();
 
@@ -21,7 +22,7 @@ public class Hall {
         this.height = height;
         this.color = color;
 
-        hallCellSet = new HashSet();
+        HashSet<HallCell> hallCellSet = new HashSet();
         tableList = new ArrayList<>();
 
         for(int j = 0; j < height; j++){
@@ -33,6 +34,9 @@ public class Hall {
 
     }
 
+    /**
+     * Добавляет стол в зал и проверяет его на пересечение с другими столами
+     */
     public boolean addTable(Table table){
         boolean result = true;
 
@@ -47,28 +51,6 @@ public class Hall {
         return result;
     }
 
-    private boolean isCellEmpty(ObjCell[] objCells){
-        boolean result = true;
-        for(HallCell hallCell : hallCellSet){
-            for(int i = 0; i < objCells.length; i++){
-                if(objCells[i].x == hallCell.x && objCells[i].y == hallCell.y){
-                    result = false;
-                }
-            }
-        }
-        return result;
-    }
-
-    private boolean isHallEmpty(){
-        boolean result = true;
-        for(HallCell hallCell : hallCellSet){
-            if(!hallCell.isEmpty){
-                result = false;
-                break;
-            }
-        }
-        return result;
-    }
 
     public Color getColor() {
         return color;
