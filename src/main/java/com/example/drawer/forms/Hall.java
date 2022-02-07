@@ -2,15 +2,19 @@ package com.example.drawer.forms;
 
 
 import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class Hall {
     private final Color color;
     private final double width;
     private final double height;
     private static HashSet<HallCell> hallCellSet;
-    private static HashMap<Integer,Table> tableMap;
+
+    public static List<Table> tableList = new ArrayList<>();
 
     public Hall(double width, double height, Color color){
         this.width = width;
@@ -18,7 +22,7 @@ public class Hall {
         this.color = color;
 
         hallCellSet = new HashSet();
-        tableMap = new HashMap<>();
+        tableList = new ArrayList<>();
 
         for(int j = 0; j < height; j++){
             for(int i = 0; i < width; i++){
@@ -31,35 +35,15 @@ public class Hall {
 
     public boolean addTable(Table table){
         boolean result = true;
-        if(!isHallEmpty()) {
-            if(isCellEmpty(table.cellsCoord)) {
-                tableMap.put(table.getId(), table);
-                for (HallCell hallCell : hallCellSet) {
-                    for (int i = 0; i < table.cellsCoord.length; i++) {
-                        if (hallCell.x == table.cellsCoord[i].x && hallCell.y == table.cellsCoord[i].y) {
-                            hallCell.isEmpty = false;
-                        }
-                    }
-                }
-                result = true;
 
-            } else {
-                System.out.println("ERROR");
-                result = false;
-            }
-
-        } else {
-            tableMap.put(table.getId(), table);
-            for (HallCell hallCell : hallCellSet) {
-                for (int i = 0; i < table.cellsCoord.length; i++) {
-                    if (hallCell.x == table.cellsCoord[i].x && hallCell.y == table.cellsCoord[i].y) {
-                        hallCell.isEmpty = false;
-                    }
+        for(Table ex : tableList){
+            if(ex != table){
+                if(table.rect.intersects(ex.rect.getBoundsInParent())){
+                    result = false;
                 }
             }
-            result = true;
-
         }
+        tableList.add(table);
         return result;
     }
 
@@ -89,6 +73,8 @@ public class Hall {
     public Color getColor() {
         return color;
     }
+
+
 
     public double getWidth() {
         return width;
