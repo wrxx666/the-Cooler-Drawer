@@ -12,11 +12,5 @@ public class ObjCell extends Cell{
         this.id = counter;
         counter++;
     }
-    public ObjCell(double x, double y){
-        this.x = x;
-        this.y = y;
-        this.id = counter;
-        counter++;
-    }
 
 }

@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Hall {
-    private Color color;
-    private double width;
-    private double height;
+    private final Color color;
+    private final double width;
+    private final double height;
     private static HashSet<HallCell> hallCellSet;
     private static HashMap<Integer,Table> tableMap;
 

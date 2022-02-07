@@ -4,17 +4,15 @@ package com.example.drawer;
 import com.example.drawer.forms.Hall;
 import com.example.drawer.forms.Table;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
-public class ExampleFromOracle extends Application {
+public class GraphicEditor extends Application {
 
     public static void main(String [] args){
         launch(args);
@@ -32,16 +30,9 @@ public class ExampleFromOracle extends Application {
 
         Hall floor = new Hall(900,600, Color.LIGHTGRAY);
 
-
         Drawer.drawHall(gc, floor);
 
-
-        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                Drawer.drawTable(gc, floor, new Table(mouseEvent.getX(), mouseEvent.getY(), 30, 60));
-            }
-        });
+        scene.setOnMouseClicked(mouseEvent -> Drawer.drawTable(gc, floor, new Table(mouseEvent.getX(), mouseEvent.getY(), 30, 60)));
 
         stage.setScene(scene);
         stage.show();

@@ -3,7 +3,6 @@ package com.example.drawer;
 import com.example.drawer.forms.Hall;
 import com.example.drawer.forms.Table;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 public class Drawer {
@@ -24,15 +23,4 @@ public class Drawer {
         }
     }
 
-    private void drawWall(GraphicsContext gc,double x,double y, double x1, double y1){
-        gc.setLineWidth(5);
-        gc.strokeLine(x,y,x1,y1);
-    }
-
-    private void drawPlan(GraphicsContext gc){
-        drawWall(gc,0,0,200,0);
-        drawWall(gc,0,0,0,200);
-        drawWall(gc,0,100,100,100);
-        drawWall(gc,0,200,200,200);
-    }
 }

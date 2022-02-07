@@ -3,8 +3,7 @@ package com.example.drawer.forms;
 public class Table extends HallObject{
 
     private static int count;
-    private int id;
-    private int square;
+    private final int id;
 
     public Table(double x,double y, double width, double height) {
         this.x = x;
@@ -12,7 +11,7 @@ public class Table extends HallObject{
         this.width = width;
         this.height = height;
 
-        square = (int) (width * height);
+        int square = (int) (width * height);
         cellsCoord = new ObjCell[square];
 
         id = count;
