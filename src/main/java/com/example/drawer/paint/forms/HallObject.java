@@ -1,4 +1,4 @@
-package com.example.drawer.forms;
+package com.example.drawer.paint.forms;
 
 /**
  * Описание абстрактного объекта в зале

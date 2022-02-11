@@ -1,4 +1,4 @@
-package com.example.drawer.forms;
+package com.example.drawer.paint.forms;
 
 /**
  * Клетка, только для описания единиц зала

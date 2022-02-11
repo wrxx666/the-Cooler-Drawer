@@ -1,8 +1,9 @@
 package com.example.drawer;
 
 
-import com.example.drawer.forms.Hall;
-import com.example.drawer.forms.Table;
+import com.example.drawer.paint.Drawer;
+import com.example.drawer.paint.forms.Hall;
+import com.example.drawer.paint.forms.Table;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -11,7 +12,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-
+/**
+ * Запускатель рисователя столов
+ */
+//TODO написать для него ТОDО, потому что в момент написания этого - было лень
 public class GraphicEditor extends Application {
 
     public static void main(String [] args){

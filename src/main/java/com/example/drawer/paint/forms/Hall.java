@@ -1,8 +1,7 @@
-package com.example.drawer.forms;
+package com.example.drawer.paint.forms;
 
 
 import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -38,17 +37,16 @@ public class Hall {
      * Добавляет стол в зал и проверяет его на пересечение с другими столами
      */
     public boolean addTable(Table table){
-        boolean result = true;
 
         for(Table ex : tableList){
             if(ex != table){
                 if(table.rect.intersects(ex.rect.getBoundsInParent())){
-                    result = false;
+                    return false;
                 }
             }
         }
         tableList.add(table);
-        return result;
+        return true;
     }
 
 
