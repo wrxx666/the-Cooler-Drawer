@@ -1,0 +1,15 @@
+Моя заметка, для себя, моё, совсем моё
+
+
+
+
+
+
+
+
+{"token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJleHAiOjE2NDQ2MDE2NDYsImlzcyI6IlJlc2VydmF0aW9uU3lzdGVtQVBJIiwiYXVkIjoiUmVzZXJ2YXRpb25TeXN0ZW0ifQ._6_TXy-dQkOjuBR2Q8tLi7ugJhh0sipJ7l0UkxoT8tk"}
+{"token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJleHAiOjE2NDQ2MDE2NDYsImlzcyI6IlJlc2VydmF0aW9uU3lzdGVtQVBJIiwiYXVkIjoiUmVzZXJ2YXRpb25TeXN0ZW0ifQ._6_TXy-dQkOjuBR2Q8tLi7ugJhh0sipJ7l0UkxoT8tk"}
+complete
+{"token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJleHAiOjE2NDQ2MDE2NDYsImlzcyI6IlJlc2VydmF0aW9uU3lzdGVtQVBJIiwiYXVkIjoiUmVzZXJ2YXRpb25TeXN0ZW0ifQ._6_TXy-dQkOjuBR2Q8tLi7ugJhh0sipJ7l0UkxoT8tk"}
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJleHAiOjE2NDQ2MDE2NDYsImlzcyI6IlJlc2VydmF0aW9uU3lzdGVtQVBJIiwiYXVkIjoiUmVzZXJ2YXRpb25TeXN0ZW0ifQ._6_TXy-dQkOjuBR2Q8tLi7ugJhh0sipJ7l0UkxoT8tk
+[{"id":"1c3df216-edb4-4a44-f9fa-08d9e8b27288","name":"Алмаз","address":"string"},{"id":"099fc22f-5a29-4e50-b838-69ab1f59e04f","name":"Мегаполис Брудершафт","address":"г.Челябинск, Свердловский проспект 51А"},{"id":"6b16fa2f-67eb-4860-a80d-08d9e8b60e26","name":"Фокус2","address":"string"}]
