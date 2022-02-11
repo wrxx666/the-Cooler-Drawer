@@ -21,15 +21,7 @@ public class Hall {
         this.height = height;
         this.color = color;
 
-        HashSet<HallCell> hallCellSet = new HashSet();
         tableList = new ArrayList<>();
-
-        for(int j = 0; j < height; j++){
-            for(int i = 0; i < width; i++){
-                hallCellSet.add(new HallCell(i,j,true));
-            }
-        }
-
 
     }
 

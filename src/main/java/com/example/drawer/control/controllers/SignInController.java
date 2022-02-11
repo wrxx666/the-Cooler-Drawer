@@ -1,5 +1,6 @@
 package com.example.drawer.control.controllers;
 
+import com.example.drawer.api.TalkerPost;
 import com.example.drawer.control.logic.SignIn;
 import com.example.drawer.paint.Drawer;
 import javafx.event.ActionEvent;
@@ -40,9 +41,9 @@ public class SignInController { //TODO Попробовать прикрутит
     }
 
     public void onSignInButtonClick() throws IOException, ParseException {
-        boolean isAccepted = SignIn.jsonSign(loginField.getText(),passwordField.getText());
+        String isAccepted = SignIn.jsonSign(loginField.getText(),passwordField.getText());
 
-        if(isAccepted){
+        if(isAccepted.equals("true")){
             //FXMLLoader fxmlLoader = new FXMLLoader(SignInController.class.getResource("mainMenu.fxml"));
             //Scene scene = new Scene(fxmlLoader.load(), 876, 451);
             //Stage pr = (Stage) signInButton.getScene().getWindow();
@@ -57,9 +58,9 @@ public class SignInController { //TODO Попробовать прикрутит
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-            alert.setTitle("Attention");
+            alert.setTitle(isAccepted);
             alert.setHeaderText(null);
-            alert.setContentText("Wrong login or password");
+            alert.setContentText("");
 
             alert.showAndWait();
         }

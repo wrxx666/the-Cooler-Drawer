@@ -5,8 +5,8 @@ package com.example.drawer.api;
  */
 
 public class User {
-    String username;
-    String password;
+    String message;
+    long statusCode;
     public User(){
 
     }

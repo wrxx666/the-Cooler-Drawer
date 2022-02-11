@@ -19,8 +19,7 @@ public class Drawer {
         if (floor.addTable(table)) {
             gc.setFill(Color.GREEN);
             gc.setLineWidth(1);
-            gc.fillRect(table.getX(), table.getY(), table.getWidth(), table.getHeight());
-            //gc.fillRoundRect(table.getX(), table.getY(), table.getWidth(), table.getHeight(), 10, 10);
+            gc.fillRoundRect(table.getX(), table.getY(), table.getWidth(), table.getHeight(), 10, 10);
             gc.strokeRoundRect(table.getX(), table.getY(), table.getWidth(), table.getHeight(), 10, 10);
         } else {
             System.out.println("SPACE IS NOT AVAILABLE");

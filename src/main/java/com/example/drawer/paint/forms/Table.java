@@ -18,7 +18,7 @@ public class Table extends HallObject{
         this.height = height;
 
         int square = (int) (width * height);
-        cellsCoord = new ObjCell[square];
+
 
         id = count;
         name = "Table" + id;
@@ -30,16 +30,8 @@ public class Table extends HallObject{
         rect.setWidth(width);
         rect.setHeight(height);
 
-        for(int j = 0, s=0; j < height; j++){
-            for (int i = 0; i < width; i++,s++){
-                cellsCoord[s] = new ObjCell(x+i,y+j,this);
-            }
-        }
 
-    }
 
-    public int getId() {
-        return id;
     }
 
     @Override

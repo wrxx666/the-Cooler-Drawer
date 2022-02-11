@@ -1,10 +1,12 @@
 package com.example.drawer.api;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.HashMap;
-
 
 /**
  * Вытаскивает из json ответа сервера токен и передаёт его для создания запроса
@@ -12,20 +14,26 @@ import java.util.HashMap;
 public class JParse {
     public static void tokenParse(String jsonAnswer) throws ParseException, IOException {
         JSONParser jsonParser = new JSONParser();
-        JSONObject jojo_lol = new JSONObject();
-        Object o = jsonParser.parse(jsonAnswer);
+        JSONObject answerOwner = (JSONObject) jsonParser.parse(jsonAnswer);
 
-        if(o instanceof JSONObject){
-            jojo_lol = (JSONObject) o;
-            System.out.println("complete");
-            System.out.println(jojo_lol.toJSONString());
+        String token = (String) answerOwner.get("token");
+
+        //HashMap<String,String> getJson = new HashMap<>();
+        answerOwner.remove("token");
+        answerOwner.put("Authorization",token);
+
+        TalkerGet.getRest(token);//TODO Добавить некий хранитель токена, чтобы можно было делать не только гет запросы
+
+        FileWriter fw = new FileWriter("./src/main/java/com/example/drawer/api/UserData.json");   //Записывает в жесон
+        fw.write(answerOwner.toJSONString());
+        fw.close();
+
+
+        FileReader reader = new FileReader("./src/main/java/com/example/drawer/api/UserData.json"); //читает из жесона
+        BufferedReader br = new BufferedReader(reader);
+        String buffer = "";
+        while(br.ready()){
+            buffer += br.readLine();
         }
-
-        String token = (String) jojo_lol.get("token");
-        System.out.println(token);
-        HashMap<String,String> getJson = new HashMap<>();
-        getJson.put("Authorization",token);
-        JSONObject res = new JSONObject(getJson);
-        TalkerGet.getRest(token);   //TODO Добавить некий хранитель токена, чтобы можно было делать не только гет запросы
     }
 }

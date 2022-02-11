@@ -25,6 +25,6 @@ public abstract class HallObject {
         return height;
     }
 
-    ObjCell[] cellsCoord;
+
     String name;
 }
