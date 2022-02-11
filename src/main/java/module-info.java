@@ -16,10 +16,12 @@ module com.example.drawer {
 
     opens com.example.drawer to javafx.fxml;
     exports com.example.drawer;
-    exports com.example.drawer.control;
-    opens com.example.drawer.control to javafx.fxml;
+    exports com.example.drawer.control.logic;
+    opens com.example.drawer.control.logic to javafx.fxml;
     exports com.example.drawer.paint.forms;
     opens com.example.drawer.paint.forms to javafx.fxml;
     exports com.example.drawer.paint;
     opens com.example.drawer.paint to javafx.fxml;
+    exports com.example.drawer.control.controllers;
+    opens com.example.drawer.control.controllers to javafx.fxml;
 }

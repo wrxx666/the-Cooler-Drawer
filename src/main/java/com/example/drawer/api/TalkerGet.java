@@ -12,7 +12,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
  * Отправляет запрос серверу
  */
 public class TalkerGet {
-    public static void getRest(String token) throws ClientProtocolException,IOException {
+    public static void getRest(String token) throws IOException {
         HttpClient client = new DefaultHttpClient();
 
         HttpGet request = new HttpGet("http://172.16.5.110:8081/api/restaurants");

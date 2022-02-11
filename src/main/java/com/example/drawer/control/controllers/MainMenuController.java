@@ -1,4 +1,4 @@
-package com.example.drawer.control;
+package com.example.drawer.control.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

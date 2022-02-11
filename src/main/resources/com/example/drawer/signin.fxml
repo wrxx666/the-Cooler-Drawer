@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.drawer.control.SignInController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.drawer.control.controllers.SignInController">
    <children>
       <GridPane layoutX="-1.0" prefHeight="250.0" prefWidth="500.0">
         <columnConstraints>
@@ -34,7 +34,7 @@
                   <PasswordField fx:id="passwordField" prefHeight="31.0" prefWidth="250.0" promptText="Password" />
                   <Pane prefHeight="36.0" prefWidth="250.0">
                      <children>
-                        <Button fx:id="signInButton" layoutY="4.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="250.0" text="Sign in" onAction="#o">
+                        <Button fx:id="signInButton" layoutY="4.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="250.0" text="Sign in" onAction="#onSignInButtonClick">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font>
