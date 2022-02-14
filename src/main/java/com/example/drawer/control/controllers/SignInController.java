@@ -1,15 +1,12 @@
 package com.example.drawer.control.controllers;
 
-import com.example.drawer.GraphicEditor;
 import com.example.drawer.Menu;
 import com.example.drawer.api.JParse;
-import com.example.drawer.api.TalkerGet;
 import com.example.drawer.api.TalkerPost;
 import com.example.drawer.control.logic.UserParserToJSON;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;

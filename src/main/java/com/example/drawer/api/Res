@@ -13,3 +13,76 @@ complete
 {"token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJleHAiOjE2NDQ2MDE2NDYsImlzcyI6IlJlc2VydmF0aW9uU3lzdGVtQVBJIiwiYXVkIjoiUmVzZXJ2YXRpb25TeXN0ZW0ifQ._6_TXy-dQkOjuBR2Q8tLi7ugJhh0sipJ7l0UkxoT8tk"}
 Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJleHAiOjE2NDQ2MDE2NDYsImlzcyI6IlJlc2VydmF0aW9uU3lzdGVtQVBJIiwiYXVkIjoiUmVzZXJ2YXRpb25TeXN0ZW0ifQ._6_TXy-dQkOjuBR2Q8tLi7ugJhh0sipJ7l0UkxoT8tk
 [{"id":"1c3df216-edb4-4a44-f9fa-08d9e8b27288","name":"Алмаз","address":"string"},{"id":"099fc22f-5a29-4e50-b838-69ab1f59e04f","name":"Мегаполис Брудершафт","address":"г.Челябинск, Свердловский проспект 51А"},{"id":"6b16fa2f-67eb-4860-a80d-08d9e8b60e26","name":"Фокус2","address":"string"}]
+
+
+
+[{"id":"904bdece-b70a-417b-a26f-639d9c527d79","name":"Мегаполис Брудершафт","address":"г.Челябинск, Свердловский проспект 51А","isDeleted":false},{"id":"aa246f6a-f0de-4ed9-b883-8ed1505b4279","name":"Фокус Брудершафт","address":"г.Челябинск","isDeleted":false}]
+Мегаполис Брудершафт
+Фокус Брудершафт
+[{"id":"904bdece-b70a-417b-a26f-639d9c527d79","name":"Мегаполис Брудершафт","address":"г.Челябинск, Свердловский проспект 51А","isDeleted":false},{"id":"aa246f6a-f0de-4ed9-b883-8ed1505b4279","name":"Фокус Брудершафт","address":"г.Челябинск","isDeleted":false}]
+Мегаполис Брудершафт
+Фокус Брудершафт
+[{"id":"904bdece-b70a-417b-a26f-639d9c527d79","name":"Мегаполис Брудершафт","address":"г.Челябинск, Свердловский проспект 51А","isDeleted":false},{"id":"aa246f6a-f0de-4ed9-b883-8ed1505b4279","name":"Фокус Брудершафт","address":"г.Челябинск","isDeleted":false}]
+Мегаполис Брудершафт
+Фокус Брудершафт
+
+
+[
+  {
+    "id": "f40953a4-ca4e-42bb-96ed-ebac14a79e41",
+    "name": "Второй этаж",
+    "width": 500,
+    "height": 500,
+    "isDeleted": false
+  },
+  {
+    "id": "ccb212be-2390-4481-a084-70ce5f9b8ee9",
+    "name": "Летняя терраса",
+    "width": 800,
+    "height": 800,
+    "isDeleted": false
+  },
+  {
+    "id": "3d046e2e-9a7c-42cd-af83-e77e66acbc7e",
+    "name": "Первый этаж",
+    "width": 500,
+    "height": 500,
+    "isDeleted": false
+  }
+]
+
+
+
+
+[
+  {
+    "id": "1baea778-6cb9-40f6-9ac3-1781a000fe79",
+    "x": 50,
+    "y": 50,
+    "width": 50,
+    "height": 50,
+    "layoutResObjectTypeId": "00000000-0000-0000-0000-000000000000",
+    "layoutResId": "3d046e2e-9a7c-42cd-af83-e77e66acbc7e",
+    "isDeleted": false
+  },
+  {
+    "id": "93296a25-bd4a-4b0c-bbc1-1cd9c8a8071e",
+    "x": 10,
+    "y": 10,
+    "width": 380,
+    "height": 10,
+    "layoutResObjectTypeId": "00000000-0000-0000-0000-000000000000",
+    "layoutResId": "3d046e2e-9a7c-42cd-af83-e77e66acbc7e",
+    "isDeleted": false
+  },
+  {
+    "id": "60b3a725-d28b-41d0-bb59-9470896796b2",
+    "x": 10,
+    "y": 20,
+    "width": 10,
+    "height": 380,
+    "layoutResObjectTypeId": "00000000-0000-0000-0000-000000000000",
+    "layoutResId": "3d046e2e-9a7c-42cd-af83-e77e66acbc7e",
+    "isDeleted": false
+  }
+]

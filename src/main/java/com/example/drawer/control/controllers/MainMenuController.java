@@ -1,5 +1,6 @@
 package com.example.drawer.control.controllers;
 
+import com.example.drawer.Menu;
 import com.example.drawer.api.HallInfo;
 import com.example.drawer.api.JParse;
 import com.example.drawer.api.TalkerGet;
@@ -7,9 +8,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -29,6 +33,7 @@ public class MainMenuController {
     @FXML
     private Button exitBtn;
 
+
     @FXML
     private Button loadTableBtn;
 
@@ -38,14 +43,20 @@ public class MainMenuController {
     @FXML
     private ListView<String> tablesList;
 
+    public MainMenuController() throws IOException {
+    }
+
     @FXML
     void onEditButtonClick(ActionEvent event) {
 
     }
 
     @FXML
-    void onExitBtnClick(ActionEvent event) {
-
+    void onExitBtnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 250);
+        Stage pr = (Stage) exitBtn.getScene().getWindow();
+        pr.setScene(scene);
     }
 
     @FXML
