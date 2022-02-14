@@ -12,10 +12,12 @@ module com.example.drawer {
     requires org.apache.httpcomponents.httpclient;
     requires org.apache.httpcomponents.httpcore;
     requires json.simple;
+    requires com.google.gson;
 
 
     opens com.example.drawer to javafx.fxml;
     exports com.example.drawer;
+    exports com.example.drawer.api to com.google.gson;
     exports com.example.drawer.control.logic;
     opens com.example.drawer.control.logic to javafx.fxml;
     exports com.example.drawer.paint.forms;

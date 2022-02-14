@@ -15,7 +15,6 @@ public class Menu extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("signin.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 250);
-
         stage.setTitle("TableEditor");
         stage.setScene(scene);
         stage.show();

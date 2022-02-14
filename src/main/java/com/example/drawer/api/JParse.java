@@ -1,41 +1,29 @@
 package com.example.drawer.api;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+import java.util.*;
 
 /**
- * Вытаскивает из json ответа сервера токен и передаёт его для создания запроса
+ * Вытаскивает из json ответа сервера токен и сохраняет его для последующего создания запроса
  */
 public class JParse {
-    public static void tokenParse(String jsonAnswer) throws ParseException, IOException {
-        JSONParser jsonParser = new JSONParser();
-        JSONObject answerOwner = (JSONObject) jsonParser.parse(jsonAnswer);
+    public static TokenHolder tokenHolder;
+    public static List<HallInfo> hallList;
+    public static void tokenParse(String jsonAnswer){
+        tokenHolder = new Gson().fromJson(jsonAnswer,TokenHolder.class);
+    }
+    public static void hallParse(String jsonAnswer){
+        System.out.println(jsonAnswer);
 
-        String token = (String) answerOwner.get("token");
+        Gson gson = new Gson();
 
-        //HashMap<String,String> getJson = new HashMap<>();
-        //Gson
-        answerOwner.remove("token");
-        answerOwner.put("Authorization",token);
-
-        TalkerGet.getRest(token);//TODO Добавить некий хранитель токена, чтобы можно было делать не только гет запросы
-
-        FileWriter fw = new FileWriter("./src/main/java/com/example/drawer/api/Token.json");   //Записывает в жесон
-        fw.write(answerOwner.toJSONString());
-        fw.close();
-
-
-        FileReader reader = new FileReader("./src/main/java/com/example/drawer/api/Token.json"); //читает из жесона
-        BufferedReader br = new BufferedReader(reader);
-        String buffer = "";
-        while(br.ready()){
-            buffer += br.readLine();
+        Type userListType = new TypeToken<ArrayList<HallInfo>>(){}.getType();
+        ArrayList<HallInfo> hallArray = gson.fromJson(jsonAnswer,userListType);
+        for(HallInfo h : hallArray){
+            System.out.println(h.name);
         }
+        hallList = hallArray;
     }
 }
