@@ -1,11 +1,12 @@
 package com.example.drawer;
 
 
-import com.example.drawer.control.controllers.EditorController;
+
 import com.example.drawer.paint.Drawer;
 import com.example.drawer.paint.forms.Hall;
 import com.example.drawer.paint.forms.Table;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -26,21 +27,26 @@ public class GraphicEditor extends Application {
         launch(args);
     }
 
+    @FXML
+    private Canvas drawerCan;
+
+
     @Override
     public void start(Stage stage) throws IOException {
         stage.setTitle("Drawing Operations Test");
 
         FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("editor.fxml"));
 
-        Group root = new Group();
 
-        Canvas canvas = new Canvas();
 
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        root.getChildren().add(canvas);
+        drawerCan = new Canvas();
+        //Canvas canvas = new Canvas();
+
+        GraphicsContext gc = drawerCan.getGraphicsContext2D();
+        //root.getChildren().add(drawerCan);
         //Scene scene = new Scene(root);
 
-        Scene scene = new Scene(fxmlLoader.load(), 500, 250);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
 
         Hall floor = new Hall(900,600, Color.LIGHTGRAY);
 
@@ -51,13 +57,6 @@ public class GraphicEditor extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-
-
-
-
-
-
 
 
 

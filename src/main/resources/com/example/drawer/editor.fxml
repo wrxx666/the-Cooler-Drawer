@@ -32,69 +32,74 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.Group?>
 <?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.drawer.control.controllers.EditorController">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <ScrollPane layoutY="4.0" prefHeight="358.0" prefWidth="640.0">
-               <content>
-                  <Group fx:id="root">
+<VBox prefHeight="515.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.drawer.control.controllers.EditorController">
+   <children>
+      <ImageView fitHeight="65.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@tableEditor.png" />
+         </image>
+      </ImageView>
+      <TabPane prefHeight="438.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="floor1" text="1 floor">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Canvas fx:id="drawerCan" height="513.0" width="833.0" />
+                        <ScrollPane prefHeight="461.0" prefWidth="640.0">
+                           <content>
+                              <Canvas fx:id="drawerCan" height="526.0" onMouseClicked="#draw" width="723.0" />
+                           </content>
+                        </ScrollPane>
                      </children>
-                  </Group>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="floor2" text="2 floor">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane prefHeight="461.0" prefWidth="640.0">
+                           <content>
+                              <Canvas fx:id="drawerCan1" height="526.0" onMouseClicked="#draw" width="723.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
                </content>
-            </ScrollPane>
-      </children>
-    </AnchorPane>
-  </children>
+            </Tab>
+            <Tab fx:id="floor3" text="3 floor">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane prefHeight="461.0" prefWidth="640.0">
+                           <content>
+                              <Canvas fx:id="drawerCan11" height="526.0" onMouseClicked="#draw" width="723.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <HBox prefHeight="72.0" prefWidth="640.0">
+         <children>
+            <Button fx:id="loadBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Load" />
+            <Button fx:id="saveBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Save" />
+            <Button fx:id="usefullBtn" layoutX="71.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Usefull" />
+            <Button fx:id="exitBtn" layoutX="132.0" layoutY="10.0" mnemonicParsing="false" onAction="#onExitBtnClick" prefHeight="26.0" prefWidth="61.0" text="Exit" />
+         </children>
+      </HBox>
+   </children>
 </VBox>

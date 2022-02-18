@@ -56,12 +56,14 @@ public class MainMenuController {
     @FXML
     void onEditButtonClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("editor.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 250);
+        Scene scene = new Scene(fxmlLoader.load(), 640, 515);
         Stage pr = (Stage) exitBtn.getScene().getWindow();
         pr.setScene(scene);
         new EditorController().initialize(pr);
     }
+
     boolean isAlreadyOneClick;
+
     public void mouseClicked(MouseEvent mouseEvent) {
 
         if (isAlreadyOneClick) {
@@ -79,6 +81,7 @@ public class MainMenuController {
             }, 500);
         }
     }
+
     @FXML
     void onExitBtnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("signin.fxml"));
@@ -86,6 +89,7 @@ public class MainMenuController {
         Stage pr = (Stage) exitBtn.getScene().getWindow();
         pr.setScene(scene);
     }
+
 
     @FXML
     void onLoadTableBtnClick(ActionEvent event) throws IOException{
