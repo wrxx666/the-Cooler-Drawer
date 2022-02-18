@@ -13,10 +13,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+
+
 
 /**
  * Обеспечивает взаимодействие кнопачек и вьюшечек в главном меню с логикой программы
@@ -44,13 +49,36 @@ public class MainMenuController {
     private ListView<String> tablesList;
 
     public MainMenuController() throws IOException {
+
+     //   mouseClicked(new MouseEvent());
     }
 
     @FXML
-    void onEditButtonClick(ActionEvent event) {
-
+    void onEditButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("editor.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 250);
+        Stage pr = (Stage) exitBtn.getScene().getWindow();
+        pr.setScene(scene);
+        new EditorController().initialize(pr);
     }
+    boolean isAlreadyOneClick;
+    public void mouseClicked(MouseEvent mouseEvent) {
 
+        if (isAlreadyOneClick) {
+            System.out.println("double click");
+            isAlreadyOneClick = false;
+        } else {
+            isAlreadyOneClick = true;
+            Timer t = new Timer("doubleclickTimer", false);
+            t.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                    isAlreadyOneClick = false;
+                }
+            }, 500);
+        }
+    }
     @FXML
     void onExitBtnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("signin.fxml"));
@@ -60,7 +88,7 @@ public class MainMenuController {
     }
 
     @FXML
-    void onLoadTableBtnClick(ActionEvent event) throws IOException, ParseException {
+    void onLoadTableBtnClick(ActionEvent event) throws IOException{
         String answer = TalkerGet.getRest(JParse.tokenHolder.token);
         JParse.hallParse(answer);
         ObservableList<String>obs = FXCollections.observableArrayList();
@@ -68,6 +96,9 @@ public class MainMenuController {
             obs.add(h.name);
         }
         tablesList.setItems(obs);
+    }
+    void getHallId(){
+
     }
 
 }
