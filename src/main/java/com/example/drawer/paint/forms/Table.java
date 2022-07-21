@@ -34,6 +34,14 @@ public class Table extends HallObject{
 
     }
 
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Table.count = count;
+    }
+
     @Override
     public String toString() {
         return "Table{" +

@@ -28,16 +28,25 @@ public class Hall {
     /**
      * Добавляет стол в зал и проверяет его на пересечение с другими столами
      */
+
     public boolean addTable(Table table){
 
         for(Table ex : tableList){
             if(ex != table){
                 if(table.rect.intersects(ex.rect.getBoundsInParent())){
+                    Table.setCount(Table.getCount()-1);
                     return false;
                 }
             }
         }
         tableList.add(table);
+
+        /* for (Table e : tableList){
+            System.out.println(e.name);
+        }
+        System.out.println(Table.getCount());
+
+         */
         return true;
     }
 
