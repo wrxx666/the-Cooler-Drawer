@@ -34,7 +34,7 @@ public class Hall {
         for(Table ex : tableList){
             if(ex != table){
                 if(table.rect.intersects(ex.rect.getBoundsInParent())){
-                    Table.setCount(Table.getCount()-1);
+                    //Table.setCount(Table.getCount()-1);
                     return false;
                 }
             }

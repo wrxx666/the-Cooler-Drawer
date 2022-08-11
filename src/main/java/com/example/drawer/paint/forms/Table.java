@@ -6,9 +6,9 @@ import javafx.scene.shape.Rectangle;
  * Описывает некий стол
  */
 public class Table extends HallObject{
-
-    private static int count;
-    private final int id;
+//TODO ID ранее добавлялся автоматически при создании стола кликом мыши, нужно чтобы ID он брал с сервера
+    //private static int count;
+    //private final int id;
     public Rectangle rect;
 
     public Table(double x,double y, double width, double height) {
@@ -20,9 +20,9 @@ public class Table extends HallObject{
         int square = (int) (width * height);
 
 
-        id = count;
-        name = "Table" + id;
-        count++;
+        //id = count;
+        name = "Table" ;//id;
+        //count++;
 
         rect = new Rectangle();
         rect.setX(x);
@@ -34,18 +34,18 @@ public class Table extends HallObject{
 
     }
 
-    public static int getCount() {
-        return count;
-    }
+    //public static int getCount() {
+        //return count;
+   // }
 
-    public static void setCount(int count) {
-        Table.count = count;
-    }
+   // public static void setCount(int count) {
+   //     Table.count = count;
+    //}
 
     @Override
     public String toString() {
         return "Table{" +
-                "id=" + id +
+               // "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }

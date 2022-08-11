@@ -16,11 +16,13 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.UUID;
 
 /**
  * Запускатель рисователя столов
  */
 //TODO написать для него ТОDО, потому что в момент написания этого - было лень
+    //это ты зря кнш сразу не сделал теперь хер поймёшь че тут вообще происходит
 public class GraphicEditor extends Application {
 
     public static void main(String [] args){
@@ -33,6 +35,9 @@ public class GraphicEditor extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
+
+
         stage.setTitle("Drawing Operations Test");
 
         FXMLLoader fxmlLoader = new FXMLLoader(Menu.class.getResource("editor.fxml"));
