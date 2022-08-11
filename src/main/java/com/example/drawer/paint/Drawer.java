@@ -15,6 +15,22 @@ public class Drawer {
         gc.fillRect(0,0, hall.getWidth(), hall.getHeight());
     }
 
+   /* public static void drawTable(GraphicsContext gc, Hall floor, double xPos, double yPos, double width, double height ){
+
+
+        if (floor.addTable(xPos,yPos,width,height)) {
+            gc.setFill(Color.GREEN);
+            gc.setLineWidth(1);
+            gc.fillRoundRect(table.getX(), table.getY(), table.getWidth(), table.getHeight(), 10, 10);
+            gc.strokeRoundRect(table.getX(), table.getY(), table.getWidth(), table.getHeight(), 10, 10);
+        } else {
+            System.out.println("SPACE IS NOT AVAILABLE");
+        }
+    }
+
+    */
+
+
     public static void drawTable(GraphicsContext gc, Hall floor, Table table){
         if (floor.addTable(table)) {
             gc.setFill(Color.GREEN);
@@ -25,5 +41,7 @@ public class Drawer {
             System.out.println("SPACE IS NOT AVAILABLE");
         }
     }
+
+
 
 }

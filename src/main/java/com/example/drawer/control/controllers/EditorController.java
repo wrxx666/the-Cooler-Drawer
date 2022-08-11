@@ -12,10 +12,14 @@ import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -46,8 +50,20 @@ public class EditorController {
 
     @FXML
     void draw(MouseEvent mouseEvent){
+        ContextMenu cm = new ContextMenu();
+        MenuItem mi1 = new MenuItem("Menu 1");
+        cm.getItems().add(mi1);
+        MenuItem mi2 = new MenuItem("Menu 2");
+        cm.getItems().add(mi2);
+      //  Node node =
 
-        Drawer.drawTable(drawerCan.getGraphicsContext2D(), floor, new Table(mouseEvent.getX(), mouseEvent.getY(), 30, 60));
+        if(mouseEvent.getButton() == MouseButton.SECONDARY){
+          //  cm.show
+        } else {
+            Drawer.drawTable(drawerCan.getGraphicsContext2D(), floor, new Table(mouseEvent.getX(), mouseEvent.getY(), 30, 60));
+        }
+       // Drawer.drawTable(drawerCan.getGraphicsContext2D(), floor, new Table(mouseEvent.getX(), mouseEvent.getY(), 30, 60));
+
 
     }
     private Hall floor = new Hall(900,600, Color.LIGHTGRAY);
